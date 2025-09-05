@@ -10,10 +10,12 @@ export const auth = betterAuth({
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
       accessType: "offline",
       prompt: "consent",
+      
     },
     github: {
       clientId: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
+      
     },
   },
   trustedOrigins: [
@@ -23,4 +25,5 @@ export const auth = betterAuth({
     sameSite: "lax", // use "none" if frontend/backend are on different domains
     secure: false, // must be true in production (https)
   },
+
 });
