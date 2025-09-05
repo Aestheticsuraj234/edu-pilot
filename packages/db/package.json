@@ -1,0 +1,20 @@
+{
+  "name": "@edupilot/db",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "types": "src/index.ts",
+  "scripts": {
+    "prisma:generate": "prisma generate --schema=./prisma/schema.prisma",
+    "prisma:migrate": "prisma migrate dev --schema=./prisma/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "latest"
+  },
+  "devDependencies": {
+    "prisma": "latest"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

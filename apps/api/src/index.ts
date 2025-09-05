@@ -6,7 +6,11 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { toNodeHandler } from 'better-auth/node';
+
 import { auth } from '@/auth.js';
+import messageRoute from "@/routes/project.routes.js"
+
+
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,15 +21,16 @@ app.use(cors({
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
-
 app.options("*splat", cors()); // handle preflight requests
-
 
 app.use(helmet());
 
 app.all("/api/auth/*splat", toNodeHandler(auth)); 
 
 app.use(express.json());
+
+
+app.use("/api/v1/projects", messageRoute);
 
 
 app.get('/', (req: Request, res: Response) => {
