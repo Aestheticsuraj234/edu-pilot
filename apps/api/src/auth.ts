@@ -1,6 +1,8 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import { db } from "@/lib/db.js";
+import { db } from "@edupilot/db";
+import dotenv from 'dotenv';
+dotenv.config();
 
 export const auth = betterAuth({
   database: prismaAdapter(db, { provider: "postgresql" }),
