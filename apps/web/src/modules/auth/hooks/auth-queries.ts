@@ -5,24 +5,6 @@ import { DEFAULT_LOGIN_REDIRECT , DEFAULT_LOGOUT_REDIRECT } from '@/routes'
 
 
 
-interface User {
-  id: string
-  email: string
-  name: string
-  image?: string
-  createdAt: Date
-  updatedAt: Date
-}
-
-interface Session {
-  user: User
-  session: {
-    id: string
-    userId: string
-    expiresAt: Date
-    token: string
-  }
-}
 
 export const authKeys = {
   all: ['auth'] as const,

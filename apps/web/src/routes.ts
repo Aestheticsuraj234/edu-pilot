@@ -36,7 +36,7 @@ export const authRoutes: string[] = [
  * @type {string}
  */
 
-export const apiAuthPrefix: string = ""
+export const apiAuthPrefix: string = "/api/auth"
 
 export const DEFAULT_LOGIN_REDIRECT = process.env.NEXT_PUBLIC_APP_URL; // Changed to redirect to home page after login
 
